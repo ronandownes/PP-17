@@ -1,0 +1,89 @@
+
+% added 28/10/20 2344
+
+
+
+
+
+
+
+\usepackage{color}   %May be necessary if you want to color links
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true, %set true if you want colored links
+    linktoc=all,     %set to all if you want both sections and subsections linked
+    linkcolor=darkgray,  %choose some color if you want links to stand out
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    \newtheorem{notation}{Notation}[chapter]
+
+% Boxed/framed environments
+\newtheoremstyle{ocrenumbox}% Theorem style name
+{0pt}% Space above
+{0pt}% Space below
+{\normalfont}% Body font
+{}% Indent amount
+{\small\bf\sffamily\color{ocre}}% Theorem head font
+{\;}% Punctuation after theorem head
+{0.25em}% Space after theorem head
+{\small\sffamily\color{ocre}\thmname{#1}\nobreakspace\thmnumber{\@ifnotempty{#1}{}\@upn{#2}}% Theorem text (e.g. Theorem 2.1)
+\thmnote{\nobreakspace\the\thm@notefont\sffamily\bfseries\color{black}---\nobreakspace#3.}} % Optional theorem note
+
+\newtheoremstyle{blacknumex}% Theorem style name
+{5pt}% Space above
+{5pt}% Space below
+{\normalfont}% Body font
+{} % Indent amount
+{\small\bf\sffamily}% Theorem head font
+{\;}% Punctuation after theorem head
+{0.25em}% Space after theorem head
+{\small\sffamily{\tiny\ensuremath{\blacksquare}}\nobreakspace\thmname{#1}\nobreakspace\thmnumber{\@ifnotempty{#1}{}\@upn{#2}}% Theorem text (e.g. Theorem 2.1)
+\thmnote{\nobreakspace\the\thm@notefont\sffamily\bfseries---\nobreakspace#3.}}% Optional theorem note
+
+\newtheoremstyle{blacknumbox} % Theorem style name
+{0pt}% Space above
+{0pt}% Space below
+{\normalfont}% Body font
+{}% Indent amount
+{\small\bf\sffamily}% Theorem head font
+{\;}% Punctuation after theorem head
+{0.25em}% Space after theorem head
+{\small\sffamily\thmname{#1}\nobreakspace\thmnumber{\@ifnotempty{#1}{}\@upn{#2}}% Theorem text (e.g. Theorem 2.1)
+\thmnote{\nobreakspace\the\thm@notefont\sffamily\bfseries---\nobreakspace#3.}}% Optional theorem note
+
+% Non-boxed/non-framed environments
+\newtheoremstyle{ocrenum}% Theorem style name
+{5pt}% Space above
+{5pt}% Space below
+{\normalfont}% Body font
+{}% Indent amount
+{\small\bf\sffamily\color{ocre}}% Theorem head font
+{\;}% Punctuation after theorem head
+{0.25em}% Space after theorem head
+{\small\sffamily\color{ocre}\thmname{#1}\nobreakspace\thmnumber{\@ifnotempty{#1}{}\@upn{#2}}% Theorem text (e.g. Theorem 2.1)
+\thmnote{\nobreakspace\the\thm@notefont\sffamily\bfseries\color{black}---\nobreakspace#3.}} % Optional theorem note
+\makeatother
+
+% Defines the theorem text style for each type of theorem to one of the three styles above
+\newcounter{dummy} 
+\numberwithin{dummy}{section}
+\theoremstyle{ocrenumbox}
+\newtheorem{theoremeT}[dummy]{Theorem}
+\newtheorem{problem}{Problem}[chapter]
+\newtheorem{exerciseT}{Exercise}[chapter]
+\theoremstyle{blacknumex}
+\newtheorem{exampleT}{Example}[chapter]
+\theoremstyle{blacknumbox}
+\newtheorem{vocabulary}{Vocabulary}[chapter]
+\newtheorem{definitionT}{Definition}[section]
+\newtheorem{corollaryT}[dummy]{Corollary}
+\theoremstyle{ocrenum}
+\newtheorem{proposition}[dummy]{Proposition}
+
